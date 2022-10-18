@@ -56,7 +56,6 @@ tensorboard
 tensorboard-data-server
 tensorboard-plugin-wit
 tensorflow
-tensorflow-cpu-aws
 tensorflow-estimator
 tensorflow-io-gcs-filesystem
 termcolor==2.0.1
