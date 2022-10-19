@@ -1,4 +1,4 @@
-FROM python:3.8.13
+FROM python:3.8.13 as builder
 WORKDIR /backend/src
 COPY requirements.txt ./
 RUN apt-get update &&\
@@ -7,7 +7,9 @@ RUN pip install --upgrade pip &&\
     pip3 install tensorflow &&\
     pip3 install deepface &&\
     pip3 install opencv-python &&\
-    pip3 install matplotlib
+    pip3 install matplotlib &&\
+    pip3 install uWSGI
     # pip3 install -r requirements.txt
 COPY src ./
-CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8080"]
+# CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uwsgi","uwsgi.ini"]
