@@ -11,3 +11,6 @@ def index():
     if request.method == 'POST':
         image = request.json['image']
     return get_emotion(image)
+
+if __name__ == '__main__':
+    app.run()
