@@ -12,4 +12,4 @@ RUN pip install --upgrade pip &&\
     # pip3 install -r requirements.txt
 COPY src ./
 # CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8080"]
-CMD ["uwsgi","uwsgi.ini"]
+CMD ["sh", "-c", "uwsgi uwsgi.ini && sh"]
