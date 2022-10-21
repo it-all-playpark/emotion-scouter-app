@@ -13,3 +13,6 @@ def get_emotion(img_base64):
     result = DeepFace.analyze(img,actions=['emotion'])
 
     return result
+
+if __name__ == '__main__':
+    get_emotion.run()

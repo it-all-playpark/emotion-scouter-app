@@ -1,4 +1,4 @@
-FROM python:3.8.13 as builder
+FROM python:3.10.8-buster
 WORKDIR /backend/src
 COPY requirements.txt ./
 RUN apt-get update &&\
