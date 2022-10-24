@@ -14,5 +14,5 @@ def get_emotion(img_base64):
 
     return result
 
-if __name__ == '__main__':
-    get_emotion.run()
+# if __name__ == '__main__':
+#     get_emotion.run()
