@@ -5,7 +5,7 @@ RUN apt-get update &&\
 
 RUN pip3 install uwsgi
 
-COPY requirements.txt ./project/requirements.txt 
+COPY requirements.txt /project/requirements.txt 
 RUN pip3 install -r project/requirements.txt
 
 
