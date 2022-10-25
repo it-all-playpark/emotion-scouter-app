@@ -11,13 +11,17 @@ RUN pip install --upgrade pip &&\
     pip3 install uwsgi
 
 
-RUN useradd --no-create-home nginx
+# nginxユーザー追加
+# nginxユーザーがlocalでDeepfaceを実行できるように 
+# nginxユーザーがcloud runでDeepfaceを実行できるように 
+RUN useradd --no-create-home nginx &&\
+    chmod 703 /root &&\
+    chmod 733 /home
+
 
 RUN rm /etc/nginx/sites-enabled/default
 RUN rm -r /root/.cache
 
-# nginxユーザーがDeepfaceを実行できるように
-RUN chmod 703 /root
 
 COPY server-conf/nginx.conf /etc/nginx/
 COPY server-conf/flask-site-nginx.conf /etc/nginx/conf.d/
