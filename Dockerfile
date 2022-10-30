@@ -4,11 +4,7 @@ RUN apt-get update &&\
     apt-get install -y --no-install-recommends libgl1-mesa-dev nginx supervisor gfortran
 
 RUN pip install --upgrade pip &&\
-    pip3 install tensorflow &&\
-    pip3 install deepface &&\
-    pip3 install opencv-python &&\
-    pip3 install matplotlib &&\
-    pip3 install uwsgi
+    pip3 install tensorflow deepface opencv-python matplotlib uwsgi python-dotenv flask_httpauth
 
 
 # nginxユーザー追加
